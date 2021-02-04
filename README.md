@@ -1,5 +1,5 @@
 # setup
 
 ```
-curl -s https://amitness.com/setup | bash
+curl -sL https://amitness.com/setup | bash
 ```
