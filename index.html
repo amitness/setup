@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
-sudo apt install -y zip htop tmux git
+# Update sources
+sudo apt-get update -y
+
+# Cleanup
+sudo apt autoremove -y
+
+# Install
+sudo apt install -y zip htop tmux git axel
