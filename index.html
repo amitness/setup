@@ -7,6 +7,79 @@ sudo apt-get update -y
 sudo apt autoremove -y
 
 # Install
-sudo apt install -y zip htop tmux git axel xclip
+sudo apt install -y zip 
+sudo apt install -y htop
+sudo apt install -y git 
+sudo apt install -y axel 
+sudo apt install -y tmux
+sudo apt install -y xclip
+sudo apt install -y hub
+sudo apt install -y yakuake
+sudo apt install -y vlc
+sudo apt install -y thunar
+sudo apt install -y gthumb
+sudo apt install -y redshift redshift-gtk geoclue-2.0
+sudo apt install -y python-pip
+sudo apt install -y python3-pip
+sudo apt install -y python3-dev
+sudo apt install -y python3-tk
+sudo apt install -y inkscape
+sudo apt install -y vim
+sudo apt install -y whois
+sudo apt install -y typecatcher
+sudo apt install -y gimp
+sudo apt install -y pinta
+sudo apt install -y sshpass
+sudo apt install -y autoconf
+sudo apt install -y libx11-dev
+sudo apt install -y autojump
 
-# TODO: Migrate dotfiles
+# Install Build Essentials for PIP
+sudo apt install -y build-essential libssl-dev libffi-dev python-dev
+sudo apt install -y python3-venv
+sudo apt install -y libkf5globalaccel-bin
+
+# Dependencies for Shutter tool
+sudo apt install -y libgoocanvas-common libgoocanvas3 libgoo-canvas-perl
+
+# Install useful python libraries globally
+pip install --user -U pip
+pip install --user virtualenv
+pip install --user -U setuptools
+pip install --user requests
+pip install --user bs4
+pip install --user jupyter
+pip install --user pandas
+pip install --user html5lib
+pip install --user matplotlib
+pip install --user wheel
+
+# Machine Learning Libraries
+pip install --user tensorflow
+pip install --user keras
+pip install --user scikit-learn
+pip install --user scikit-image
+pip install --user imageio
+pip install --user seaborn
+pip install --user sklearn
+pip install --user pydot
+
+# Add python3 kernel to jupyter notebook
+python3 -m pip install --user ipykernel
+python3 -m ipykernel install --user
+
+# Remove default apps
+sudo apt-get -y remove thunderbird
+sudo apt-get -y remove pidgin
+sudo apt-get -y remove banshee
+sudo apt-get -y remove xchat
+sudo apt-get -y remove tomboy
+sudo apt-get -y remove xplayer
+
+# Install visual studio code
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get install -y apt-transport-https
+sudo apt-get update -y
+sudo apt-get install -y code
