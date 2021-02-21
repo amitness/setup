@@ -85,6 +85,9 @@ sudo apt-get install -y apt-transport-https
 sudo apt-get update -y
 sudo apt-get install -y code
 
+# Install cinnamon
+sudo apt install -y cinnamon-desktop-environment
+
 ## Configurations
 # Show more apps in the startup applications
 sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
