@@ -91,3 +91,14 @@ sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 # Disable notification for WiFi connect and disconnects
 gsettings set org.gnome.nm-applet disable-disconnected-notifications "true"
 gsettings set org.gnome.nm-applet disable-connected-notifications "true"
+
+# Set dotfiles
+if [ ! -d "$HOME/dotfiles/" ] 
+then
+    echo "Setting up dotfiles"
+    git clone https://github.com/amitness/dotfiles.git ~/dotfiles/
+    ln -svf ~/dotfiles/runcom/.bash_profile ~
+    ln -svf ~/dotfiles/git/.gitconfig ~
+    ln -svf ~/dotfiles/runcom/.inputrc ~
+    chmod a+x ~/dotfiles/scripts/*.sh
+fi
